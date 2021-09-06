@@ -1,9 +1,9 @@
 # tfaker
-Gere CNPJ e CPF válidos a partir do terminal. <br>
+Gere CPF e CNPJ válidos a partir do terminal. <br>
 Sem abrir mais uma aba do Chrome e sem Ctrl-C.
 
 ### Instalação
-Siga este passo a passo para instalar o **tfaker**:
+Você pode executar o script de instalação ou seguir este passo a passo para instalar o **tfaker**:
 
 1. É necessário que você tenha o gerenciador de pacotes pip instalado. Caso não possua, execute o seguinte comando:
     ```sh
