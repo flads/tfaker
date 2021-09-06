@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 import pyperclip
 import random
 
@@ -9,28 +10,20 @@ def generateCNPJ():
     cnpj = [random.randint(1, 9) for _ in range(12)]
 
     # Calculate first verifying digit
-    firstResult = []
+    firstResultSumValues = 0
 
     for x in range(len(cnpj)):
-        firstResult.append(cnpj[x] * firstSet[x])
-
-    firstResultSumValues = 0
-    for x in range(len(firstResult)):
-        firstResultSumValues += firstResult[x]
+        firstResultSumValues += cnpj[x] * firstSet[x]
 
     firstVerifyingDigit = 11 - (11 if (firstResultSumValues % 11) < 2 else (firstResultSumValues % 11))
 
     cnpj.append(firstVerifyingDigit)
 
     # Calculate second verifying digit
-    secondResult = []
+    secondResultSumValues = 0
 
     for x in range(len(cnpj)):
-        secondResult.append(cnpj[x] * secondSet[x])
-
-    secondResultSumValues = 0
-    for x in range(len(secondResult)):
-        secondResultSumValues += secondResult[x]
+        secondResultSumValues += cnpj[x] * secondSet[x]
 
     secondVerifyingDigit = 11 - (11 if (secondResultSumValues % 11) < 2 else (secondResultSumValues % 11))
 
