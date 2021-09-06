@@ -38,6 +38,8 @@ def generateCPF(separators):
     pyperclip.copy(cpf)
     pyperclip.paste()
 
+    return cpf
+
 def generateCNPJ(separators):
     firstSet = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
     secondSet = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
@@ -72,6 +74,8 @@ def generateCNPJ(separators):
     pyperclip.copy(cnpj)
     pyperclip.paste()
 
+    return cnpj
+
 @click.group()
 def tf():
     pass
@@ -79,14 +83,16 @@ def tf():
 @click.command()
 @click.option('--separators', '-s', is_flag=True)
 def cpf(separators):
-    generateCPF(separators)
-    click.echo(click.style('CPF copied!', bg='green', fg='black'))
+    cpf = generateCPF(separators)
+    click.echo(cpf)
+    click.echo(click.style(' Copied! ', bg='green', fg='black'))
 
 @click.command()
 @click.option('--separators', '-s', is_flag=True)
 def cnpj(separators):
-    generateCNPJ(separators)
-    click.echo(click.style('CNPJ copied!', bg='green', fg='black'))
+    cnpj = generateCNPJ(separators)
+    click.echo(cnpj)
+    click.echo(click.style(' Copied! ', bg='green', fg='black'))
 
 tf.add_command(cpf)
 tf.add_command(cnpj)
