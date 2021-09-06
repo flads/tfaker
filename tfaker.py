@@ -73,7 +73,7 @@ def generateCNPJ(separators):
     pyperclip.paste()
 
 @click.group()
-def cli():
+def tf():
     pass
 
 @click.command()
@@ -88,8 +88,8 @@ def cnpj(separators):
     generateCNPJ(separators)
     click.echo(click.style('CNPJ copied!', bg='green', fg='black'))
 
-cli.add_command(cpf)
-cli.add_command(cnpj)
+tf.add_command(cpf)
+tf.add_command(cnpj)
 
 if __name__ == '__main__':
-    cli()
+    tf()
