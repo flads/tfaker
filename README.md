@@ -1,6 +1,10 @@
 # tfaker
 Gere CNPJ e CPF válidos a partir do terminal.
 
+<p align="center">
+  <img src="./img/example.png" alt="Size Limit CLI" width="738">
+</p>
+
 ## Instalação
 Siga este passo a passo para instalar o tfaker:
 
@@ -16,7 +20,7 @@ Siga este passo a passo para instalar o tfaker:
 
 3. Entre na pasta do projeto e instale as dependências:
     ```sh
-    cd ~/src/faker && pip3 install -r requirements.txt
+    cd ~/src/tfaker && pip3 install -r requirements.txt
     ```
 
 4. Crie um link para facilitar o uso do tfaker:
@@ -27,4 +31,4 @@ Siga este passo a passo para instalar o tfaker:
 5. Você pode checar se o comando **tf** está funcionando corretamente assim:
     ```sh
     tf --help
-    ``
+    ```
