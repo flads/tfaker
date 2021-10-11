@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install python3-pip -y
+sudo apt-get install python3-pip xclip -y
 
 mkdir -p ~/src && git clone git@github.com:flads/tfaker.git ~/src/tfaker
 
