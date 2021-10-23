@@ -3,6 +3,8 @@
 import click
 import pyperclip
 import random
+import secrets
+import string
 
 def generateCPF(separators):
     firstSet = [10, 9, 8, 7, 6, 5, 4, 3, 2]
@@ -76,6 +78,15 @@ def generateCNPJ(separators):
 
     return cnpj
 
+def generatePassword():
+    alphabet = string.ascii_letters + string.digits + '!@#$%()[]~_-'
+    password = ''.join(secrets.choice(alphabet) for i in range(20))
+
+    pyperclip.copy(password)
+    pyperclip.paste()
+
+    return password;
+
 @click.group()
 def tf():
     pass
@@ -94,8 +105,15 @@ def cnpj(separators):
     click.echo(cnpj)
     click.echo(click.style(' Copied! ', bg='green', fg='black'))
 
+@click.command()
+def password():
+    password = generatePassword()
+    click.echo(password)
+    click.echo(click.style(' Copied! ', bg='green', fg='black'))
+
 tf.add_command(cpf)
 tf.add_command(cnpj)
+tf.add_command(password)
 
 if __name__ == '__main__':
     tf()
