@@ -5,6 +5,7 @@ import pyperclip
 import random
 import secrets
 import string
+from uuid import uuid4
 
 def generateCPF(separators):
     firstSet = [10, 9, 8, 7, 6, 5, 4, 3, 2]
@@ -87,6 +88,14 @@ def generatePassword():
 
     return password;
 
+def generateUuid():
+    uuid = str(uuid4())
+
+    pyperclip.copy(uuid)
+    pyperclip.paste()
+
+    return uuid;
+
 @click.group()
 def tf():
     pass
@@ -111,9 +120,16 @@ def password():
     click.echo(password)
     click.echo(click.style(' Copied! ', bg='green', fg='black'))
 
+@click.command()
+def uuid():
+    uuid = generateUuid()
+    click.echo(uuid)
+    click.echo(click.style(' Copied! ', bg='green', fg='black'))
+
 tf.add_command(cpf)
 tf.add_command(cnpj)
 tf.add_command(password)
+tf.add_command(uuid)
 
 if __name__ == '__main__':
     tf()
